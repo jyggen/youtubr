@@ -1,0 +1,14 @@
+#!/usr/bin/env php
+<?php
+require_once __DIR__.'/../vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+use Youtubr\Command\Playlist\Download as PlaylistDownload;
+use Youtubr\Command\Playlist\Merge as PlaylistMerge;
+use Youtubr\Command\Video\Download as VideoDownload;
+
+$console = new Application();
+$console->add(new PlaylistDownload);
+$console->add(new PlaylistMerge);
+$console->add(new VideoDownload);
+$console->run();
